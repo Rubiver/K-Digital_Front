@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Emmet 편리한 문법
+        table>tr>td 
+        table>tr>td*3 
+    -->
+    <table border="1" width ="40%">
+        <tbody align="center">
+            <!-- 테이블 셀병합은 좌에서 우로, 위에서 아래로만 동작함.-->
+            가로병합
+            <tr>
+                <td colspan="2">A</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td colspan="2">E</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table border="1">
+        <tbody>
+            새로병합
+            <!-- 테이블 셀병합은 좌에서 우로, 위에서 아래로만 동작함.-->
+            <tr>
+                <td rowspan="3">A</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td>F</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

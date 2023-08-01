@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* > : 자손 선택자 - 특정요소의 직계 자손요소에 대해서 검색하는 선택자 */
+        /* 후손 선택자 : 특정 요소의 모든 후손 요소에 대해서 검색하는 선택자 기호로 띄어쓰기를 사용 */
+        #box>.fruit{
+            background-color: orange;
+        }
+        #box>fieldset>.fbox>.fruit{
+            background-color: aquamarine;
+        }
+        /*선택자 사용 시 띄어쓰기에 주의해야함.*/
+        #box .fruits{
+            background-color: orange;
+        }
+        #table{
+            background-color: burlywood;
+        }
+        #table>.fruit{
+            background-color: purple;
+        }
+        #box>fieldset{
+                background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>냉장고, 자식 선택자</legend>
+        <div id = "box">
+            <div class="fruit">
+                orange
+            </div>
+            <fieldset>
+                <legend>과일 바구니</legend>
+                <div class="fbox">
+                    <div class="fruit">
+                        mango
+                    </div>
+                </div>
+            </fieldset>
+            
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>냉장고, 후손선택자</legend>
+        <div id = "box">
+            <div class="fruits">
+                orange
+            </div>
+            <fieldset>
+                <legend>과일 바구니</legend>
+                <div class="fbox">
+                    <div class="fruits">
+                        orange
+                    </div>
+                </div>
+            </fieldset>
+            
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>식탁</legend>
+        <div id = table>
+            <span class="fruit">
+                grape
+            </span>
+        </div>
+    </fieldset>
+    
+</body>
+</html>

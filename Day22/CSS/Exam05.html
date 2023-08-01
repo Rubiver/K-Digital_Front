@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*형제 선택자 : 자신과 동급 수준(형제)이고, 바로 뒤에 있는 기호를 찾을 때 사용
+        +기호 : 바로 뒤에 있는 형제 태그를 검색
+        ~ 기호: 지정 요소 뒤에있는 특정 모든 형제 태그를 섬색*/
+
+        h4+h5{
+            background-color: cyan;
+        }
+        p+h5{
+            background-color: antiquewhite;
+        }
+        
+        /*h4 뒤에 있는 형제 태그 중 p 태그인 것*/
+        h4 ~ p{
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- h4태그는 p태그와 형제 관계임-->
+        <p>test0</p>
+        <h4>test1</h4>
+        <h5>test2</h5>
+        <p>test3</p>
+        <h5>test4</h5>
+        <p>test5</p>
+        <p>test6</p>
+    </div>
+</body>
+</html>

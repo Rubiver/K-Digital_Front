@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*태그 선택자 */
+        div{
+            border: 2px solid black;
+        }
+        /*ID 선택자 - 태그가 가진 ID 속성값을 이용해 선택적으로 적용하는 문법*/
+        #mid{
+            background-color: lightgoldenrodyellow;
+        }
+        #top,#bottom{
+            background-color: gray;
+        }
+        /*Class 선택자 - 제일 많이 사용*/
+        .asd{
+            background-color: aqua !important;
+        }
+
+        .asd{
+            background-color: saddlebrown !important;
+            /* 나중에 작성된 것이 우선순위가 더 높게됨.*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        중복된 id를 허용하지 않음.
+    -->
+    <div id = "top">text1</div>
+    <div id = "mid">text2</div>
+    <div id = "bottom">text3</div>
+    <hr>
+    <div class="asd" id="top">범위가 좁을수록 우선순위가 높음 ( Inline > Id > Class > 태그 ) </div>
+    <div id="top" style="background-color: plum;"> Inline이 제일 우선순위 높음 </div>
+    <span class="asd">text3</span>
+    <hr>
+    <div class="asd" id="top">CSS에서 !important 를 사용하면 우선순위가 제일 높아짐. </div>
+</body>
+</html>
