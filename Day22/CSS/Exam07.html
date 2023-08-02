@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p:nth-child(5){
+            background-color: cadetblue;
+        }
+        /*div태그 밑에 p태그들 중에서 3번째를 선택.*/
+        div p:nth-of-type(3){
+            color: red;
+        }
+        div p:last-of-type{
+            background-color: beige;
+        }
+        div p:first-of-type{
+            background-color: violet;
+        }
+        /*마지막 요소가 아니기 때문에 적용안됨.*/
+        div p:last-child{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>text1</p>
+        <h4>text1</h4>
+        <p>text2</p>
+        <h4>text2</h4>
+        <p>text3 (div 태그 아래에선 5번째, p태그 중에선 3번째)</p>
+        <h4>text3</h4>
+        <p>text4</p>
+        <h4>text4</h4>
+        <p>text5</p>
+        <h4>text5</h4>
+    </div>
+</body>
+</html>

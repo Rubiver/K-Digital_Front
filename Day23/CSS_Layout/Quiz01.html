@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .container{
+            width: 600px;
+            height: 800px;
+            margin: auto;
+        }
+        .header{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+        .body{
+            height: 100%;
+        }
+        .left{
+            height: 100%;
+            width: 50%;
+            float: left;
+        }
+        .right{
+            height: 100%;
+            width: 50%;
+            float: left;
+        }
+        .left>.body1{
+            height: 60%;
+            background-color:pink;
+        }
+        .left>.body2{
+            height: 40%;
+            background-color: dodgerblue;
+        }
+        .right>.body3{
+            height: 40%;
+            background-color: yellowgreen;
+        }
+        .right>.body4{
+            height: 60%;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Aloc Daloc
+        </div>
+        <div class="body">
+            <div class="left">
+                <div class="body1"></div>
+                <div class="body2"></div>
+            </div>
+            <div class="right">
+                <div class="body3"></div>
+                <div class="body4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

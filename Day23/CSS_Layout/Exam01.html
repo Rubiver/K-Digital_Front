@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*HTML가지는 display 속성에 의해 사이즈가 결정됨(fill_content or maximun)*/
+        /*div의 display 속성은 block - 혼자서 한 라인을 독점하는 성질을 가짐*/
+        /*block 속성의 element는 width, height를 활용한 사이즈 변경이 가능*/
+        /* div{
+            background-color: antiquewhite;
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        } */
+        /*span의 display 속성은 inline - 자신이 가진 내용만큼의 사이즈를 갖는 성질이 있음.*/
+        /*inline속성의 element는 자신의 내용만큼의 사이즈를 가질 뿐 사이즈 변경이 불가.*/
+        /* span{
+            border: 2px solid gray;
+            width: 150px;
+            height: 150px;
+        } */
+
+        div{
+            border: 1px solid black;
+        }
+        .container{
+            width: 800px;
+            margin: auto; /*양쪽 여백을 자동으로 맞춰서 중앙에 놓음.*/
+        }
+        .row{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    HTML/CSS  레이아웃 구성
+    1. Table 태그
+    2. position 속성
+    3. div+float vs span+display:inline-block
+    4. display : flex
+    -->
+    <div class="container">
+        <div class="row">
+            row1
+        </div>
+        <div class="row">
+            row2
+        </div>
+        <div class="row">
+            row3
+        </div>
+    </div>
+</body>
+</html>

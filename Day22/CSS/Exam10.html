@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            height: 50px;
+        }
+        p:not(:nth-child(1)){
+            background-color: palevioletred;
+        }
+        p:empty{
+            background-color: cornflowerblue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p>1번째 p 태그</p>
+        <p>2번째 p 태그</p>
+        <p></p>
+        <p id="four">4번째 p 태그</p>
+        <p>5번째 p 태그</p>
+        <p>6번째 p 태그</p>
+    </div>
+</body>
+</html>

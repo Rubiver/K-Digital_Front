@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .container{
+            width: 800px;
+            height: 600px;
+            margin: auto;
+        }
+        .header{
+            height: 15%;
+        }
+        .header>.left{
+            width: 15%;
+            height: 100%;
+            float: left;
+        }
+        .header>.center{
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+        .header>.right{
+            width: 15%;
+            height: 100%;
+            float: left;
+        }
+        .nav{
+            height: 5%;
+        }
+        .body{
+            height: 70%;
+        }
+        .body>.article{
+            width: 70%;
+            height: 100%;
+            float: left;
+        }
+        .body>.account{
+            width: 30%;
+            height: 100%;
+            float: left;
+        }
+        .account>.loginbox{
+            height: 30%;
+        }
+        .account>.mailbox{
+            height: 70%;
+        }
+        .footer{
+            height: 10%;
+        }
+        ul{
+            list-style-type: none;
+            padding:0;
+            margin: 0;
+        }
+        li{
+            float: left;
+            width: 25%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        li:hover{
+            background-color: gray;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>Home</li>
+                <li>About me</li>
+                <li>Portfolio</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="body">
+            <div class="article"></div>
+            <div class="account">
+                <div class="loginbox"></div>
+                <div class="mailbox"></div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*반응선택자 : 사용자의 동작에 반응하여 선택하는 선택자.*/
+        p:nth-child(odd):hover{
+            background-color: black;
+            cursor: pointer;
+        }
+        p:nth-child(even):hover{
+            background-color: red;
+            cursor: grab;
+        }
+        div p:active{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p><a href="http://www.naver.com/"> text1</a></p>
+        <p>text2</p>
+        <p>text3</p>
+        <p>text4</p>
+        <p>text5</p>
+    </div>
+</body>
+</html>
