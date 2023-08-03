@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        #box1{
+            background-color: #d8f5b880;
+            position: absolute;
+            right: 50px;
+            z-index: 1;
+            
+        }
+        #box2{
+            background-color: #57597860;
+            position: absolute;
+            right: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <!--모든 html 요소는 position 속성을 가짐
+        default 설정은 static - normal flow 상에서 배치되는 자연스러운 고정 위치
+        relative (상대위치) : normal flow상의 원래 위치로부터 상대적인 위치 조정이 가능함
+            element 위치는 normal flow 영역
+        ㄴabsolute (절대위치) : 자신의 parent(position이 static이 아닌 parent)를 기준으로 상대적인 위치 조정이 가능함.
+            element 위치는 out-of-flow영역
+
+        position 사용할 경우 element간 겹침이 발생하는데 이는 z-index을 통해 조절가능.
+        static은 position의 다른 속성 모두 보다 무조건 아래에 위치한다.
+    -->
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+    </div>
+</body>
+</html>

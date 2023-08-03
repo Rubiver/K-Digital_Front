@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 500px;
+            border: 1px dotted black;
+            margin: auto;
+            position: relative;
+        }
+        .container>div{
+            
+            background-color: #d5b9fa20;
+            padding: 10px;
+        }
+        .image1{
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            background-color: black;
+        }
+        .image2{
+            position: absolute;
+            top: 200px;
+            left: 250px;
+            background-color: black;
+        }
+        .image3{
+            position: absolute;
+            top: 1o0px;
+            left: 400px;
+            background-color: black;
+        }
+        .image1:active{
+            z-index: 999;
+            cursor: pointer;
+        }
+        .image2:active{
+            z-index: 999;
+            cursor: pointer;
+        }
+        .image3:active{
+            z-index: 999;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image1">
+            <img src="../../img/cat.webp">
+        </div>
+        <div class="image2">
+            <img src="../../img/sky.jpg">
+        </div>
+        <div class="image3">
+            <img src="../../img/apple.png">
+        </div>
+    </div>
+</body>
+</html>
