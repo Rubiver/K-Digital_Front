@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .container{
+            width : 700px;
+            height : 800px;
+            margin: auto;
+        }
+        .left{
+            float: left;
+            width: 5%;
+            height: 100%;
+            background-color: beige;
+        }
+        .right{
+            float: left;
+            height: 100%;
+            width: 95%;
+        }
+        .right>.rightup{
+            height: 50%;
+            width: 100%;
+        }
+        .right>.rightup>.purple{
+            float: left;
+            width: 40%;
+            height: 100%;
+            background-color:blueviolet;
+        }
+        .right>.rightup>.red{
+            float: left;
+            width: 60%;
+            height: 100%;
+            background-color:coral;
+        }
+        .right>.rightdown{
+            height: 50%;
+            width: 100%;
+        }
+        .right>.rightdown>.cyan{
+            float: left;
+            height: 100%;
+            width: 60%;
+            background-color: cyan;
+        }
+        .right>.rightdown>.gray{
+            float: left;
+            height: 100%;
+            width: 40%;
+            background-color:lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <div class="rightup">
+                <div class="purple"></div>
+                <div class="red"></div>
+            </div>
+            <div class="rightdown">
+                <div class="cyan"></div>
+                <div class="gray"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

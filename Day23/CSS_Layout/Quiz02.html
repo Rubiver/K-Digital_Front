@@ -4,30 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <style>
         *{
             box-sizing: border-box;
         }
         div{
-            border: 1px solid black;
+            border: 0px solid black;
         }
         .container{
             width: 800px;
-            height: 600px;
+            height: 700px;
             margin: auto;
         }
         .header{
-            height: 15%;
+            height: 13%;
         }
         .header>.left{
-            width: 15%;
+            width: 20%;
             height: 100%;
             float: left;
         }
+        .header>.left>img{
+            width: 100%;
+            height: 100%;
+        }
         .header>.center{
-            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 65%;
             height: 100%;
             float: left;
+        }
+        .header>.center>img{
+            width: 80%;
+            height: 80%;
         }
         .header>.right{
             width: 15%;
@@ -36,6 +51,7 @@
         }
         .nav{
             height: 5%;
+            margin-bottom: 1%;
         }
         .body{
             height: 70%;
@@ -45,6 +61,54 @@
             height: 100%;
             float: left;
         }
+        .article>.articleup{
+            height: 50%;
+            width: 100%;
+        }
+        .article>.articleup>.upleft{
+            float: left;
+            border-radius: 10px;
+            width: 50%;
+            height: 100%;
+        }
+        .article>.articleup>.upright{
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+        .article>.articledown{
+            height: 50%;
+            width: 100%;
+        }
+        .article>.articledown>.downleft{
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+        .article>.articledown>.downright{
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+        .image{
+            margin: auto;
+            width: 90%;
+            height:80%;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .context{
+            margin: auto;
+            display: block;
+            width: 100%;
+            height: 15%;
+            text-align: center;
+            line-height: 36px;
+        }
+        .article> img{
+            width: 100%;
+            height: 100%;
+        }
         .body>.account{
             width: 30%;
             height: 100%;
@@ -53,55 +117,226 @@
         .account>.loginbox{
             height: 30%;
         }
+        .loginbox>.inputbox{
+            height: 80%;
+        }
+        .loginbox>.logintitle{
+            height: 20%;
+            text-align: center;
+            font-weight: bold;
+        }
+        .loginbox>.inputbox>.input{
+            float: left;
+            width: 70%;
+            height: 100%;
+        }
+        .loginbox>.inputbox>.button{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            height: 100%;
+        }
+        .loginbox>.inputbox>.input>.id{
+            height: 50%;
+            width: 100%;
+        }
+        .loginbox>.inputbox>.input>.id>input{
+            height: 100%;
+            width: 100%;
+        }
+        .loginbox>.inputbox>.input>.pw{
+            height: 50%;
+            width: 100%;
+        }
+        .loginbox>.inputbox>.input>.pw>input{
+            height: 100%;
+            width: 100%;
+        }
+        .loginbox>.inputbox>.button>input{
+            width: 80%;
+            height: 50%;
+            font-size:medium;
+            border: none;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            transition-duration: 0.5s;
+        }
+        .loginbox>.inputbox>.button>input:hover{ 
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
         .account>.mailbox{
             height: 70%;
         }
+        .mailbox>.mailtitle{
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        .mailbox>.maillist{
+            height: 60%;
+            overflow-y: auto;
+        }
+        .mailbox>.ad{
+            height: 30%;
+            background-color: pink;
+            border-radius: 5px;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            border: 1px solid black;
+        }
+        .mailbox>.maillist>.mails{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            border: 1px solid black;
+            height: 50px;
+            width: 100%;
+            padding-left: 10%;
+            transition-duration: 0.2s;
+        }
+        .mailbox>.maillist>.mails:hover{
+            background-color: black;
+            color: whitesmoke;
+            cursor: pointer;
+        }
         .footer{
             height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            font-weight: bold;
         }
-        ul{
-            list-style-type: none;
+        .nav>ul{
+            height: 100%;
             padding:0;
             margin: 0;
         }
-        li{
+        .nav>ul>li{
+            list-style-type: none;
             float: left;
             width: 25%;
-            height: 30px;
-            line-height: 30px;
+            height: 100%;
+            line-height: 29px;
             text-align: center;
             background-color: black;
             color: white;
         }
-        li:hover{
+        .nav>ul>li:hover{
             background-color: gray;
             cursor: pointer;
         }
+        hr{
+            margin-top: 15px;
+            border: 1px solid black;
+        }
+        
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="left"></div>
-            <div class="center"></div>
+            <div class="left">
+                <img src="../../img/logo.png">
+            </div>
+            <div class="center">
+                <img src="../../img/title.png">
+            </div>
             <div class="right"></div>
         </div>
         <div class="nav">
             <ul>
-                <li>Home</li>
-                <li>About me</li>
-                <li>Portfolio</li>
-                <li>Contact</li>
+                <li><i class="fa-solid fa-house"></i>&nbsp;Home</li>
+                <li><i class="fa-solid fa-face-smile-wink"></i>&nbsp;About me</li>
+                <li><i class="fa-solid fa-pen-to-square"></i>&nbsp;Portfolio</li>
+                <li><i class="fa-solid fa-phone"></i>&nbsp;Contact</li>
             </ul>
         </div>
         <div class="body">
-            <div class="article"></div>
+            <div class="article">
+                <div class="articleup">
+                    <div class="upleft">
+                        <div class="image">
+                            <img src="../../img/dog.webp">
+                        </div>
+                        <div class="context">Dog is good.</div>
+                    </div>
+                    <div class="upright">
+                        <div class="image">
+                            <img src="../../img/cat.webp">
+                        </div>
+                        <div class="context">Cat is cute.</div>
+                    </div>
+                </div>
+                <div class="articledown">
+                    <div class="downleft">
+                        <div class="image">
+                            <img src="../../img/sky.jpg">
+                        </div>
+                        <div class="context">Sky is blue.</div>
+                    </div>
+                    <div class="downright">
+                        <div class="image">
+                            <img src="../../img/basket.jpg">
+                        </div>
+                        <div class="context">Basketball is fun.</div>
+                    </div>
+                </div>
+            </div>
             <div class="account">
-                <div class="loginbox"></div>
-                <div class="mailbox"></div>
+                <div class="loginbox">
+                    <div class="logintitle"><i class="fa-regular fa-id-badge"></i>&nbsp;Loginbox</div>
+                    <div class="inputbox">
+                        <div class="input">
+                            <div class="id">
+                                <input type="text" placeholder="ID를 입력하세요.">
+                            </div>
+                            <div class="pw">
+                                <input type="password" placeholder="PW를 입력하세요.">
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="button" value="Login">
+                        </div>
+                    </div>
+                </div>
+                <div class="mailbox">
+                    <div class="mailtitle"> 
+                        <i class="fa-solid fa-envelope"></i>&nbsp;Mails
+                    </div>
+                    <div class="maillist">
+                        <div class="mails">mail1</div>
+                        <div class="mails">mail2</div>
+                        <div class="mails">mail3</div>
+                        <div class="mails">mail4</div>
+                        <div class="mails">mail5</div>
+                        <div class="mails">mail6</div>
+                        <div class="mails">mail7</div>
+                        <div class="mails">mail8</div>
+                        <div class="mails">mail9</div>
+                        <div class="mails">mail10</div>
+                        <div class="mails">mail11</div>
+                        <div class="mails">mail12</div>
+                    </div>
+                    <div class="ad"><i class="fa-brands fa-adversal"></i></div>
+                </div>
+                
             </div>
         </div>
-        <div class="footer"></div>
+        <hr>
+        <div class="footer">
+            Copyright 2023. 권석경 All rights reserved.
+        </div>
     </div>
 </body>
 </html>
