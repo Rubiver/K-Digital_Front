@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .overlay{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transition-duration: 0.5s;
+            opacity: 0;
+            text-align: center;
+        }
+        .overlay:hover{
+            background-color: #00000090;
+            opacity: 1;
+            color: white;
+            z-index: 1;
+        }
+        .overlay:hover+img{
+            transition-duration: 0.5s;
+            transform: rotate(360deg);
+            z-index: 0;
+        }
+        .overlay:hover .button{
+            visibility: visible;
+            cursor: pointer;
+        }
+        .button{
+            visibility: hidden;
+            position: absolute;
+            top: 60%;
+            left: 30%;
+        }
+        /*Front 설계 4단계
+        1. 
+        */
+    </style>
+</head>
+<body>
+    <!--포지션을 활용한 overlay 기법\
+    태그 배치에 따라 적용 가능한 범위가 달라짐.-->
+    <div class="box">
+        <div class="overlay">
+            귀여운 오리
+            <input type="button" value="더보기" class="button">
+        </div>
+        <img src="../../img/duck.png" alt="" width="150">
+    </div>
+    <div class="box">
+        <div class="overlay">
+            귀여운 오리
+            <input type="button" value="더보기" class="button">
+        </div>
+        <img src="../../img/duck.png" alt="" width="150">
+    </div>    
+    
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 0px solid black;
+        }
+        .container{
+            position: relative;
+            width: 1200px;
+            height: 1500px;
+            margin: auto; 
+            background-color: #cccccc60;
+        }
+        .header{
+            height: 8%;
+            width: 100%;
+            background-color: white;
+        }
+        .header>.logobox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            width: 20%;
+            height: 100%;
+        }
+        .header>.searchbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+        .searchbox>.searchinputbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid transparent;
+            border-image: linear-gradient(to right, cyan 0%, aquamarine 50%, orange 100%);
+            border-image-slice: 1;
+            width: 80%;
+            height: 50%;
+        }
+        .searchinputbox>.sb{
+            width: 80%;
+            height: 100%;
+        }
+        .searchinputbox>.searchicon{
+            width: 20%;
+            height: 100%;
+        }
+        .searchicon{
+            border: none;
+            background-color: white;
+        }
+        .searchicon:hover{
+            cursor: pointer;
+        }
+        .searchicon:active{
+            background-color: gray;
+        }
+        .header>.loginbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            width: 30%;
+            height: 100%;
+            position: relative;
+        }
+        .loginbox>.userinfo{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .loginbox>.logincover{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: #524b3f80;
+            backdrop-filter: blur(5px);
+            border: 2px groove black;
+        }
+        .logincover>a>button{
+            width: 80px;
+            height: 80px;
+            border: none;
+        }
+        .logincover>a>button:hover{
+            cursor: pointer;
+        }
+        .logincover>a>button:active{
+            background-color: gray;
+        }
+        .logincover>button:hover{
+            cursor: pointer;
+        }
+        .loginbox>.userinfo{
+            width: 100%;
+            height: 100%;
+        }
+        .nav{
+            height: 3%;
+        }
+        .nav>.navcontainer{
+            height: 100%;
+            width: 80%;
+            margin: auto;
+        }
+        .navcontainer>ul{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .navcontainer>ul>li{
+            list-style-type: none;
+            border-left: 1px solid black;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            width: 16.6%;
+            height: 100%;
+        }
+        .navcontainer>ul>li:hover{
+            background-color: #a7f2ee80;
+        }
+        .navcontainer>ul>li:hover .submenu{
+            opacity: 1;
+        }
+        .navcontainer>ul>li>ul{
+            position: absolute;
+            list-style: none;
+            top: 47px;
+            width: 16.6%;
+            height: 100%;
+            opacity: 0;
+            transition-duration: 0.5s;
+            z-index: 99;
+        }
+        .navcontainer>ul>li>ul>li{
+            border: 1px solid black;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .navcontainer>ul>li>ul>li:hover{
+            cursor: pointer;
+            background-color: #b3f5e3;
+            color: #1dc3f5;
+            font-weight: bold;
+        }
+        .article{
+            width: 100%;
+            height: 52%;
+        }
+        .article>.advertisebox{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 196px;
+            height:100%;
+            position: relative;
+            background-color: white;
+        }
+        .article>.advertisebox>img{
+            border: 1px solid black;
+            max-width: 100%;
+
+        }
+        .article>.productbox{
+            float: left;
+            width: 1000px;
+            height: 100%;
+        }
+        .productbox>[class*="productline"]{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .productline1>[class="box"]{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 32.8%;
+            padding: 5%;
+        }
+        .productline2>[class="box"]{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 49.4%;
+            padding: 5%;
+        }
+        .productline3>[class="box"]{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 32.8%;
+            padding: 5%;
+        }
+        .box{
+            position: relative;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 2px;
+            background-color: white;
+        }
+        .box>.cover{
+            position: absolute;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition-duration: 0.5s;
+        }
+        .box>.cover>span{
+            position: relative;
+            right: 15px;
+        }
+        .box>.cover:hover{
+            opacity: 1;
+            z-index: 1;
+        }
+        .box>.cover:hover+img{
+            transition-duration: 0.5s;
+            z-index: 0;
+            transform: translate(-50%);
+        }
+        .article2{
+            height: 30%;
+            width: 100%;
+            background-color: white;
+        }
+        .article2>.at2_left{
+            float: left;
+            width: 30%;
+            height: 100%;
+            border-right: 1px solid black;
+        }
+        .at2_left>.at2_left_title{
+            width: 100%;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration:underline;
+            
+        }
+        .at2_left>.at2_left_image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 85%;
+        }
+        .article2>.at2_right{
+            float: left;
+            width: 70%;
+            height: 100%;
+        }
+        .at2_right>.at2_right_up{
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+        }
+        .at2_right>.at2_right_down{
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+        }
+        .product{
+            float: left;
+            width: 25%;
+            height: 100%;
+        }
+        .product>.product_info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70%;
+            width: 100%;
+        }
+        .product>.product_price{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+            width: 100%;
+        }
+
+        .footer{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            height: 10%;
+            width: 100%;
+        }
+        .footer>.footercontent{
+            height: 80%;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .buy:hover{
+            cursor: pointer;
+        }
+        p:hover{
+            text-decoration: underline;
+        }
+        img:hover{
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logobox">
+                <img src="img/nanawa.png" alt="">
+            </div>
+            <div class="searchbox">
+                <div class="searchinputbox">
+                    <input type="text" placeholder="검색어 입력" class="sb">
+                    <button class="searchicon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <div class="loginbox">
+                <div class="logincover">
+                    <a href="LoginPage.html"><button>로그인</button></a>
+                </div>
+                <div class="userinfo">
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <i class="fa-regular fa-user fa-2xl"></i>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="nav">
+            <div class="navcontainer">
+                <ul>
+                    <li>가전
+                        <ul class="submenu">
+                            <li>주방</li>
+                            <li>생활</li>
+                            <li>계절</li>
+                            <li>영상</li>
+                            <li>음향</li>
+                        </ul>
+                    </li>
+                    <li>컴퓨터
+                        <ul class="submenu">
+                            <li>노트북</li>
+                            <li>조립PC 견적</li>
+                            <li>PC주요부품</li>
+                            <li>PC주변부품</li>
+                            <li>게임기</li>
+                        </ul>
+                    </li>
+                    <li>생활
+                        <ul class="submenu">
+                            <li>건강</li>
+                            <li>청소</li>
+                            <li>욕실</li>
+                            <li>세탁</li>
+                            <li>수납/정리</li>
+                        </ul>
+                    </li>
+                    <li>패션
+                        <ul class="submenu">
+                            <li>남성의류</li>
+                            <li>여성의류</li>
+                            <li>잠옷/언더웨어</li>
+                            <li>신발</li>
+                            <li>쥬얼리</li>
+                        </ul>
+                    </li>
+                    <li>음식
+                        <ul class="submenu">
+                            <li>냉장</li>
+                            <li>냉동</li>
+                            <li>음료</li>
+                            <li>채소/과일</li>
+                            <li>축산</li>
+                        </ul>
+                    </li>
+                    <li>여행</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="article">
+            <div class="advertisebox">
+                <img src="img/adad.png" alt="">
+            </div>
+            <div class="productbox">
+                <div class="productline1">
+                    <div class="box">
+                        <div class="cover">
+                            <span>정말 시원한 선풍기<br>14900원부터
+                            <br><br><img src="img/buy.png" class="buy">
+                            </span>
+                        </div>
+                        <img src="img/circulator.jpg" alt="">
+                    </div>
+                    <div class="box">
+                        <div class="cover">
+                            <span>이월 상품 최대<br>-70%
+                                <br><br><img src="img/buy.png" class="buy">
+                                </span>
+                        </div>
+                        <img src="img/coat.jpg" alt="">
+                    </div>
+                    <div class="box">
+                        <div class="cover">
+                            <span>미국산 프라임등급<br>소고기<br>100g당 2200원부터
+                                <br><br><img src="img/buy.png" class="buy">
+                                </span>
+                        </div>
+                        <img src="img/meat.webp" alt="">
+                    </div>
+                </div>
+                <div class="productline2">
+                    <div class="box">
+                        <div class="cover">
+                            <span>RTX4070 초특가 69만원 <br> 기회는 지금밖에 없다!
+                                <br><br><img src="img/buy.png" class="buy">
+                                </span>
+                        </div>
+                        <img src="img/rtx4070.jpg" alt="">
+                    </div>
+                    <div class="box">
+                        <div class="cover">
+                            <span>이렇게 좋은 가격으로 판다고?<br> 당장 사야지!
+                                <br><br><img src="img/buy.png" class="buy">
+                                </span>
+                        </div>
+                        <img src="img/nzxt.jpg" alt="">
+                    </div>
+                </div>
+                <div class="productline3">
+                    <div class="box">
+                        <div class="cover">
+                            <span>코로나시대 필수품<br>뽀송뽀송 핸드워시
+                                <br><br><img src="img/buy.png" class="buy"></span>
+                        </div>
+                        <img src="img/handwash.png" width="150px" height="150px">
+                    </div>
+                    <div class="box">
+                        <div class="cover">
+                            <span>도금 귀걸이<br>14K 16K 등
+                                <br><br><img src="img/buy.png" class="buy"></span>
+                        </div>
+                        <img src="img/goldearing.jpg" width="150px" height="150px">
+                    </div>
+                    <div class="box">
+                        <div class="cover">
+                            <span>겉바속촉 맛있는<br>치킨텐더
+                                <br><br><img src="img/buy.png" class="buy"></span>
+                        </div>
+                        <img src="img/chikentender.jpg" width="150px" height="150px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="article2">
+            <div class="at2_left">
+                <div class="at2_left_title">가장 많이 팔린 상품</div>
+                <div class="at2_left_image">
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/kimchi.jpg" alt="">
+                        </div>
+                        <div class="product_price">
+                            <p>곰곰 김치 1.1KG
+                            <br>18,900원
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="at2_right">
+                <div class="at2_right_up">
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/circulator.jpg" alt="">
+                        </div>
+                        <div class="product_price">
+                            <p>X사 서큘레이터
+                            <br>18,900원
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/mouse.jpg" width="150px" height="150px">
+                        </div>
+                        <div class="product_price">
+                            <p>로지텍 무선 마우스
+                            <br>24,900원
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/rtx4070.jpg" alt="">
+                        </div>
+                        <div class="product_price">
+                            <p>Zotac RTX 4070
+                            <br>699,900원
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/bud2pro.jpg" width="150px" height="150px">
+                        </div>
+                        <div class="product_price">
+                            <p>삼성 버즈2 프로 바이올렛
+                            <br>169,900원
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="at2_right_down">
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/handwash.png" width="150px" height="150px">
+                        </div>
+                        <div class="product_price">
+                            <p>아이! 깨끗해 핸드워시
+                            <br>8990원
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/nzxt.jpg" alt="">
+                        </div>
+                        <div class="product_price">
+                            <p>NZXT 커스텀수냉
+                            <br>189,900원
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/mandoo.jpg" width="150px" height="150px">
+                        </div>
+                        <div class="product_price">
+                            <p>냉동 갈비 만두
+                            <br>11,900원
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product_info">
+                            <img src="img/boss.png" width="150px" height="150px">
+                        </div>
+                        <div class="product_price">
+                            <p>Boss 헤드셋
+                            <br>89,900원
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            
+        </div>
+    </div>
+</body>
+</html>

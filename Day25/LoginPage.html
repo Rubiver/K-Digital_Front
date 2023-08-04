@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 0px solid black;
+        }
+        .container{
+            width: 800px;
+            height: 1200px;
+            margin: auto;
+        }
+        .logobox{
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .idbox{
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .idbox>.inputid{
+            width: 50%;
+            height: 80%;
+        }
+        .idbox>.inputid>input{
+            width: 100%;
+            height: 100%;
+            font-size: large;
+        }
+        .pwbox{
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pwbox>.inputpw{
+            width: 50%;
+            height: 80%;
+        }
+        .pwbox>.inputpw>input{
+            width: 100%;
+            height: 100%;
+            font-size: large;
+        }
+        .loginbox{
+            height: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .loginbox>.checkbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 80px;
+            width: 50%;
+            height: 100%;
+        }
+        .loginbox>.login_btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 80px;
+            width: 50%;
+            height: 100%;
+        }
+        .loginbox>.login_btn>img:hover{
+            cursor: pointer;
+        }
+        .newaccount{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15%;
+        }
+        .newaccount>.findpw{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 50%;
+            height: 70%;
+        }
+        .newaccount>.findpw>button{
+            position: absolute;
+            right: 20px;
+            width: 50%;
+            height: 50%;
+            font-size: 20px;
+        }
+        .newaccount>.createid{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 50%;
+            height: 70%;
+        }
+        .newaccount>.createid>button{
+            position: absolute;
+            left: 20px;
+            width: 50%;
+            height: 50%;
+            font-size: 20px;
+        }
+        .advertisebox{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40%;
+        }
+        .advertisebox>img{
+            position: absolute;
+            top: 20px;
+            border: 1px solid black;
+        }
+        .dummy{
+            position: absolute;
+            top: 30px;
+            left: 25%;
+            border: 3px solid black;
+            width: 500px;
+            height: 600px;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logobox">
+            <img src="img/nanawa.png" alt="">
+        </div>
+        <div class="idbox">
+            <div class="inputid">
+                <input type="text" placeholder="ID">
+            </div>
+        </div>
+        <div class="pwbox">
+            <div class="inputpw">
+                <input type="password" placeholder="PW">
+            </div>
+        </div>
+        <div class="loginbox">
+            <div class="checkbox">
+                <input type="checkbox" name="remember" id="check">Remember Password?
+            </div>
+            <div class="login_btn">
+                <img src="img/login.png" alt="">
+            </div>
+        </div>
+        <div class="newaccount">
+            <div class="findpw">
+                <button>Forgot Password?</button>
+            </div>
+            <div class="createid">
+                <button>Create new Account</button>
+            </div>
+        </div>
+        <div class="advertisebox">
+            <img src="img/ad1.png" alt="">
+        </div>
+        <div class="dummy"></div>
+    </div>
+</body>
+</html>
