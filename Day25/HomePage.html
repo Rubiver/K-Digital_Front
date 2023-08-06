@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+        
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+        
+            setTimeout(showSlides, 2000); // 2초마다 이미지가 체인지됩니다
+        }
+    </script>
     <style>
         *{
             box-sizing: border-box;
@@ -16,7 +36,6 @@
             width: 100%;
             height: 2000px;
             margin: auto; 
-            background-color: #cccccc60;
         }
         .fixedcontainer{
             width: 1200px;
@@ -181,7 +200,7 @@
 
         .main_image{
             width: 100%;
-            height: 400px;
+            height: 450px;
         }
 
         .article{
@@ -273,6 +292,8 @@
             transform: translate(-50%);
         }
         .article2{
+            position: relative;
+            top: 50px;
             height: 30%;
             width: 100%;
             background-color: white;
@@ -358,7 +379,49 @@
             border: 1px solid black;
         }
         
+        .Slidesbackground {
+            margin: 0;
+            padding: 0;
+        }
+        .slideshow-image{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .mySlides {
+            width: 100%;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .slideshow-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin: auto;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
     </style>
+    
 </head>
 <body>
     <div class="container">
@@ -442,7 +505,19 @@
         </div>
         <hr>
         <div class="main_image">
-            <img src="img/">
+            <span class="slideshow-container">
+                <div class="Slidesbackground">
+                    <div class="mySlides fade">
+                        <img src="img/coupang1.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="img/coupang2.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="img/coupang3.jpg" class="slideshow-image">
+                    </div>
+                </div>
+            </span>
         </div>
         <hr>
         <div class="fixedcontainer">
@@ -626,13 +701,14 @@
                         </div>
                     </div>
                 </div>
-    
             </div>
         </div>
         
-        <div class="footer">
+        <div class="fixedcontainer">
+            <div class="footer">
             
-        </div>
+            </div>
+        </div>    
     </div>
 </body>
 </html>
