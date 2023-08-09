@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="Hello js" id="exam">
+    <div id="examDiv">hello div</div>
+    <!-- Tag-Tag 사이는 innerHTML 공간임 -->
+    <script>
+        let a = document.getElementById("exam");
+        alert(a.value);
+        //찾으려는 요소가 만들어지기 전에 스크립트를 실행하면 오류가 발생함.
+        let b = document.getElementById("examDiv");
+        console.log(b.innerHTML);
+        b.innerHTML = "asdadsd";
+
+    </script>
+</body>
+</html>
