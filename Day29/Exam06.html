@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function plus(num1, num2){
+            return num1+num2;
+        }
+        //자바 스크립트는 문법상 함수를 일등급 함수로 부름.
+        //함수를 하나의 값으로서 다룰 수 있기 때문.
+        //자바스크립트에서 함수의 이름은 함수의 소스코드가 저장된 공간의 주소이다.
+
+        //let a = prompt("1번");
+        //let b = prompt("2번");
+        let result = plus(10,10);
+        console.log(result);
+        let a = plus; //함수 자체의 주소를 저장함. plus는 상수, a는 변수임.
+        let result2 = a(10,2); //a를 plus처럼 사용할 수 있음.
+        console.log(result2);
+
+        //익명함수를 활용한 대입식
+        let minus = function(num1, num2){ //let minus가 없으면 해당 함수는 이름이 없는 익명함수라고 함.
+            return num1-num2;
+        };
+        let result3 = minus(10,4);
+        console.log(result3);
+
+        //1회성 익명함수, JS는 함수를 값으로 다룰 수 있기 때문에 IIFE가 가능
+        //Instantly Invoked Function Expression
+        let result4 = (function(num1, num2){
+            return num1+num2;
+        }(10,5));
+        console.log(result4);
+        
+    </script>
+</body>
+</html>

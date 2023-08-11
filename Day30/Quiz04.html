@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let shop = {
+            menu: {
+                bread: ["Muffin", "Tart", "Morning Bread"],
+                beverage: ["Americano", "Cafe Latte", "Orange Juice"]
+            },
+            employee: [
+                function () {
+                    return { name: "jack", age: 25, contact: "01012344321" };
+                },
+                {
+                    name: "susan",
+                    age: 22,
+                    contact: "01043211234"
+                }
+            ]
+        };
+
+        console.log(shop.menu["bread"][0]);
+        console.log(shop.employee[1]["age"]);
+        console.log(shop.employee[0]()["contact"]);
+    </script>
+</body>
+</html>

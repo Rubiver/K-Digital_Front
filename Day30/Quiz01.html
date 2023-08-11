@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .field{
+            width: 300px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <fieldset class="field">
+        <legend>Fruits</legend>
+        <span id="fruit"></span>
+    </fieldset>
+    <input type="text" name="" id="fdata">
+    <button id="unshiftdata">앞쪽에 추가</button>
+    <button id="shiftdata">앞쪽에 삭제</button>
+    <br>
+    <input type="text" name="" id="bdata">
+    <button id="pushdata">뒤쪽에 추가</button>
+    <button id="popdata">뒤쪽에 삭제</button>
+    <script>
+        let addforward = document.getElementById("unshiftdata");
+        let delforward = document.getElementById("shiftdata");
+        let addbackward = document.getElementById("pushdata");
+        let delbackward = document.getElementById("popdata");
+        let fdata = document.getElementById("fdata");
+        let bdata = document.getElementById("bdata");
+        let fruit = document.getElementById("fruit");
+        let list = [];
+        addforward.onclick = function(){
+            if(fdata.value != ""){
+                list.unshift(fdata.value);
+            }else{
+                alert("Text 입력 필요.");
+                fdata.focus();
+            }
+            fruit.innerHTML = list;
+        }
+        delforward.onclick = function(){
+            list.shift();
+            fruit.innerHTML = list;
+        }
+        addbackward.onclick = function(){
+            if(bdata.value != ""){
+                list.push(bdata.value);
+            }else{
+                alert("Text 입력 필요.");
+                bdata.focus();
+            }
+            fruit.innerHTML = list;
+        }
+        delbackward.onclick = function(){
+            list.pop();
+            fruit.innerHTML = list;
+        }
+        
+
+    </script>
+</body>
+</html>

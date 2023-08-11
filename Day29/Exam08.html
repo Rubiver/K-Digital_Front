@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">pop</button>
+    <button id="btn2">Console</button>
+    <script>
+        //이벤트 : User가 브라우저 상에서 취하는 모든 종류의 행동
+        //이벤트 소스 : 이벤트를 발생시키는 근원 Element
+        //이벤트 리스너 : 이벤트 소스에서 발생하는 이벤트 종류를 감시하는 메커니즘.
+        //이벤트 핸들러 : 이벤트 감시자가 이벤트를 감지하는 순간 실행할 코드를 가지는 변수
+        let btn = document.getElementById("btn");
+        let btn2 = document.getElementById("btn2");
+        //callback function - 함수를 만들고, 만들어진 함수를 시스템 또는 프레임워크에 할당해두면
+        //특정 트리거를 바탕으로 자동으로 Call 되는 함수 종류
+        btn.onclick = function(e){
+            alert("pop");
+        };
+
+        btn2.onclick = function(){
+            console.log("hello event");
+        }
+
+        
+        
+
+    </script>
+</body>
+</html>

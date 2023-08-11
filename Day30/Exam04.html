@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["Java","JS","html","css"];
+        console.log(arr);
+        
+        //push : 배열 끝에 값을 추가
+        arr.push("python");
+        console.log(arr);
+
+        //pop : 배열 끝 요소를 제거
+        let returnData = arr.pop();
+        console.log(returnData);
+        console.log(arr);
+
+        console.log("---------쉬프트---------");
+        //shift : 배열의 첫 요소를 제거
+        let shiftdata = arr.shift();
+        console.log(shiftdata);
+        console.log(arr);
+
+        //unshift : 배열의 첫 요소에 데이터를 추가
+        let unshiftdata = arr.unshift("Ruby");
+        console.log(unshiftdata);
+        console.log(arr);
+
+
+    </script>
+</body>
+</html>

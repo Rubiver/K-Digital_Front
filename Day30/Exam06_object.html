@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS의 객체
+        //자바의 클래스와 인스턴스를 사용하는 문법과 유사
+        //member field, member method, constructor
+        
+        //객체 사용방법 3가지
+        //1. Object, 기본객체를 사용, 중요도 낮음
+        let obj1 = new Object(); 
+        obj1.name = "kwon";
+        obj1.phone = "01001012232";
+        obj1.info = function(){
+            console.log("hi");
+            console.log("my name is "+this.name);
+        };
+        console.log(obj1);
+        console.log(obj1.name);
+        console.log(obj1.phone);
+        obj1.info();
+        console.log("------------------------------");
+        //2. 객체 Literal 사용, 내가 간단히 객체를 만들어서 사용할 때 사용.
+        let obj2 = {
+            name: "kkwon",
+            phone: "01002020303",
+            info:function(){
+                console.log("my name is "+this.name);
+            },
+            emails:["a.com","b.com","c.com"],
+            score:{kor:90,eng:80}
+            //JSON : JavaScript Object Notation
+        };
+        console.log(obj2);
+        console.log(obj2.name);
+        console.log(obj2.phone);
+        console.log(obj2.emails[0]);
+        console.log(obj2.score.kor);
+        obj2.info();
+        console.log(obj2["name"],obj2["emails"][1], obj2["score"]["kor"]);
+        //객체에 key값은 숫자도 가능함. 그러나 숫자로된 키를 출력할때 . 으로 접근하지 못하기 때문에 []를 사용하여 접근
+        let key = "name";
+        console.log(obj2[key]);
+        //3. Constructor 사용, 남들이 사용하게 될 라이브러리를 만들 때 사용
+        //자바의 모든 함수는 생성자.
+        function Person(name, phone, info){
+            this.name= name;
+            this.phone = phone;
+            this.info = info;
+        }
+        let person = new Person("kwonss","0101010010",function(){
+            console.log("asd");
+        });
+        console.log(person["info"]());
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" value="event" id="btn">
+    <script>
+        let txt = document.getElementById("text");
+        let btn = document.getElementById("btn");
+
+        btn.onclick = function(){
+            let result = confirm(txt.value);
+            if(result){
+                txt.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

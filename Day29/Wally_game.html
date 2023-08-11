@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #trig{
+            position: absolute;
+            top:1220px;
+            left: 1200px;
+            background-color: #FFFFFF00;
+            border: none;
+        }
+        #wal{
+            transition: transform 0.2s;
+            width: 150px;
+            height: 180px;
+            filter: blur(1px);
+            filter: saturate(0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="wally.jpg" alt="">
+    </div>
+    <button id="trig">
+        <img src="wally2.png" alt=""id="wal">
+        <!--배경이 투명한 사진을 absolute로 div에 넣고 띄워놓음.-->
+    </button>
+    <script>
+        let trig = document.getElementById("trig");
+        let wally = document.getElementById("wal");
+        trig.onclick = function(){
+            wally.style.transform = 'scale(2,2)';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 300px;
+            height: auto;
+        }
+        .container>div{
+            border: 1px solid black;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        #alert{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>비밀번호 확인</legend>
+        <div class="container">
+            <div>
+                <input type="text" name="" id="pw1">
+            </div>
+            <div>
+                <input type="text" name="" id="pw2">
+            </div>
+            
+        </div>
+        <div id="alert">
+        </div>
+    </fieldset>
+    
+    
+    <script>
+        let pw1 = document.getElementById("pw1");
+        let pw2 = document.getElementById("pw2");
+        let div = document.getElementById("alert");
+        pw2.onkeyup = function(e){
+            let p1 = pw1.value;
+            let p2 = pw2.value;
+            console.log(p1);
+            console.log(p2);
+            if(p1==p2){
+                div.innerHTML = "비밀번호 일치";
+            }else{
+                div.innerHTML = "비밀번호 불일치";
+            }
+        }
+    </script>
+</body>
+</html>

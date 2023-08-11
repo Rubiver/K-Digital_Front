@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .buttons{
+            width: 100%;
+            height: fit-content;
+            position: absolute;
+            display: flex;
+            justify-content: space-evenly;
+            top: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="background-color: white;">
+        box
+        <div class="buttons">
+            <input type="button" value="red" id="red">
+            <input type="button" value="green" id="green">
+            <input type="button" value="blue" id="blue">
+        </div>
+    </div>
+    <script>
+        let btns = document.getElementsByTagName("input");
+        let div = document.getElementById("box");
+
+        for(let i=0; i<btns.length; i++)
+        {
+            btns[i].onclick = function(){
+                div.setAttribute("style","background-color:"+this.value);
+            }
+        }
+
+        // btns[0].onclick = function(){
+        //     div.setAttribute("style","background-color:red");
+        // }
+        // btns[1].onclick = function(){
+        //     div.setAttribute("style","background-color:green");
+        // }
+        // btns[2].onclick = function(){
+        //     div.setAttribute("style","background-color:blue");
+        // }
+    </script>
+</body>
+</html>

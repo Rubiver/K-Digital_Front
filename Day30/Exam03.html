@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["apple","orange","mango"];
+        console.log("배열 내부 요소의 개수 : "+arr.length);
+        let result = arr.indexOf("orangae");
+        console.log("찾으려는 요소의 index : "+result);
+        //못찾았을때는 return 값으로 -1이 반환됨.
+
+        //join 배열의 모든 요소를 구분자를 이용해 하나로 병합
+        let result2 = arr.join("구분자");
+        console.log(result2);
+
+        //sort : 배열의 모든 요소를 정렬
+        console.log("정렬 전 : "+arr);
+        let result3 = arr.sort();
+        console.log("정렬 후 : "+result3);
+    </script>
+</body>
+</html>

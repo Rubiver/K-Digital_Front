@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            position: fixed;
+            transition-duration: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        let box = document.getElementById("box");
+        let x = 0;
+        let y = 0;
+        document.onkeydown = function(e){
+            console.log(e.key);
+            if(e.key=="ArrowRight"){
+                x = x + 150;
+                box.setAttribute("style","left:"+x+"px; top:"+y+"px; transform:rotate(90deg);");
+                console.log(x);
+            }else if(e.key=="ArrowLeft"){
+                if(x-150>=0){
+                    x = x - 150;
+                }
+                box.setAttribute("style","left:"+x+"px; top:"+y+"px; transform:rotate(-90deg);");
+            }else if(e.key=="ArrowDown"){
+                y = y + 150;
+                box.setAttribute("style","left:"+x+"px; top:"+y+"px; transform:rotateZ(90deg);");
+            }else if(e.key=="ArrowUp"){
+                if(y-150>=0){
+                    y = y - 150;
+                }
+                box.setAttribute("style","left:"+x+"px; top:"+y+"px; transform:rotateZ(-90deg);");
+            }
+            
+
+            if(x%300 == 0){
+                box.style.backgroundColor = "red";
+            }else{
+                box.style.backgroundColor = "forestgreen";
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["apple","orange","mango","banana","grape","cherry"];
+        
+        //slice : 배열내의 부분 요소를 추출(복사)하는 함수, 원본배열 영향 없음.
+        let result = arr.slice(2,4);  //start,end 중 start요소는 포함되지만 end 요소는 포함되지 않음.
+        console.log(result);
+        console.log(arr);
+        
+        //splice : 배열내의 부분 요소를 삭제하거나 추가하는 함수. 원본배열 영향 있음.
+        let result2 = arr.splice(0,2); //삭제 0번 인덱스부터 2개를 삭제.
+        console.log(result2);
+        console.log(arr);
+
+        result2 = arr.splice(0,0,"melon"); //추가 0번 인덱스에 0개를 지우고 melon을 추가
+        console.log(result2);
+        console.log(arr);
+    </script>
+</body>
+</html>

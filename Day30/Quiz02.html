@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            max-width: 100%;
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>목록</legend>
+        <span id="data"></span>
+    </fieldset>
+    <input type="text" id="addData">
+    <button id="add">추가하기</button>
+    <br>
+    <input type="text" id="delData">
+    <button id="del">삭제하기</button>
+    <script>
+        let field = document.getElementById("data");
+        let add = document.getElementById("add");
+        let del = document.getElementById("del");
+        let addData = document.getElementById("addData")
+        let delData = document.getElementById("delData");
+        let list = [];
+
+        add.onclick = function(){
+            if(addData.value != ""){
+                list.push(addData.value);
+            }
+            field.innerHTML = list;
+            addData.value = "";
+        }
+        del.onclick = function(){
+            let index = list.indexOf(delData.value);
+            if(index != -1){
+                list.splice(index,1);
+            }
+            console.log(index);
+            field.innerHTML = list;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name : "jack",
+            phone : "01001010",
+            greeting : function(){
+                console.log("hello my name is "+this.name);
+            },
+            hobby:["java","guitar","read"],
+            score:{
+                kor:100,
+                eng:90,
+                mat:80
+            },
+            favoritefruits:function(){
+                return ["Apple","mango","grape"];
+            },
+            abilities:function(){
+                return {
+                    java:function(){
+                        return 100;
+                    },
+                    css:function(){
+                        return 91;
+                    },
+                    js:function(){
+                        return 80;
+                    }
+                }
+            },
+            dron:function(){
+                this.brand = "samsung";
+                this.price = "300000"
+            }
+        };
+
+        console.log(student.name,student.phone);
+        student.greeting();
+        console.log(student["hobby"][1],student["score"]["mat"])
+        console.log(student.favoritefruits()[1]);
+        console.log(student.abilities()["css"]());
+
+        let stu_dron = new student.dron();
+        console.log(stu_dron);
+    </script>
+</body>
+</html>

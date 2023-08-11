@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" value="Add" id="btn">
+    <div id="div">
+
+    </div>
+    <script>
+        let txt = document.getElementById("text");
+        let btn = document.getElementById("btn");
+        let div = document.getElementById("div");
+
+        btn.onclick = function(){
+            div.innerHTML = txt.value;
+            txt.value = "";
+        }
+    </script>
+</body>
+</html>
