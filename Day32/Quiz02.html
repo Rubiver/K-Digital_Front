@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="txt">
+    <button id="btn">test</button>
+    <fieldset>
+        <legend>
+            결과
+        </legend>
+        <div id="res"></div>
+    </fieldset>
+    <script>
+        let txt = document.getElementById("txt");
+        let btn = document.getElementById("btn");
+        let res = document.getElementById("res");
+        let regex = /^[A-Z][\w\d]{3,9}$/;
+        
+        //"J@vascript\ntester99\nHypeboy01\nBluesky^^\nVeryveryLongID\nsh";
+        btn.onclick = function(){
+            let str = txt.value;
+            let result = regex.test(str);
+            if(result){
+                res.innerHTML = "규칙에 적합";
+            }else{
+                res.innerHTML = "규칙에 부적합";
+            }
+        }
+    </script>
+</body>
+</html>

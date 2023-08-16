@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- submit: 서버에 전송하기 위해 존재하는 버튼
+        form : submit이 전송하고자 하는 데이터를 묶는(패키징) 역할.
+        form과 submit은 같이 사용해야함. 데이터는 form으로 같이 묶인 input, select, textarea에 저장된 데이터만 전송함.-->
+    <form action="msg" id="form">
+        <input type="text" id="phone" placeholder="전화번호 입력">
+        <input type="submit" id="sub">
+    </form>
+    
+    <div></div>
+    <script>
+        let form = document.getElementById("form");
+        let txt = document.getElementById("phone");
+        let regex = /^010(-?[\d]{4}){2}$/;
+
+        form.onsubmit = function(){
+            let input = txt.value;
+            let result = regex.test(input);
+            if(input == ""){
+                alert("전화번호를 입력하시오");
+                return false;
+            }
+            
+
+            if(result){
+                return true;
+            }else{
+                alert("전화번호 다시 입력");
+                return false;
+            }      
+            
+        }
+    </script>
+</body>
+</html>

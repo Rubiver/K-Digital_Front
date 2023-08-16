@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="phone" value="" placeholder="전화번호 입력">
+    <button id="test">Test</button>
+    <fieldset>
+        <legend>결과</legend>
+        <div id="result">None</div>
+    </fieldset>
+    
+    <script>
+        let btn = document.getElementById("test");
+        let txt = document.getElementById("phone");
+        let res = document.getElementById("result");
+        let regex = /^010(-?[\d]{4}){2}$/;
+        //global 옵션 추가했을때 제대로 번호를 인식하지 않는 경우가 있음.
+        btn.onclick = function(){
+            let input = txt.value;
+            let result = regex.test(input);
+            console.log(result);
+            
+            if(result){
+                res.innerHTML = "전화번호 맞음";
+                console.log(result);
+            }else{
+                res.innerHTML = "전화번호 아님";
+                console.log(result);
+            }
+        }
+    </script>
+</body>
+</html>
