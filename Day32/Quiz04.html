@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<style>
+		div{
+			border: 1px solid black;
+		}
+		table{
+			margin: auto;
+		}
+		td{
+			width: 150px;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
     <script>
@@ -3098,15 +3110,40 @@
 					
 				</ul>
 			</div>`;
-        let regexClass = / <a href=(.+?) title="(.+?)">(.+?) /gms;
-        //
-        let result = regexClass.exec(str);
-        console.log(result);
-
-        // while((result = regexClass.exec(str)) != null){
-        //     console.log(result[0]);
-        // }
-		document.write("as");
+		let regexClass = /alt="(.+?)"|<strong>(.+?)<\/strong>/g;		
+		let matches = [];
+		let match;
+		while ((match = regexClass.exec(str)) !== null) {
+			console.log(match);
+			if (match[1] !== undefined) {
+				matches.push(match[1]);
+				console.log(match[1]);
+			}
+			if (match[2] !== undefined) {
+				matches.push(match[2]);
+				console.log(match[2]);
+			}
+		}
+		document.write("<div id='container'>");
+			document.write("<table border=1>");
+				document.write("<tr>");
+					document.write("<td>제목</td>");
+					document.write("<td>평점</td>");
+				document.write("</tr>");	
+				for(let i=0; i<matches.length; i++){
+					document.write("<tr>");
+						if(i%2==0){
+							document.write("<td>"+matches[i]+"</td>");
+						}else{
+							continue;
+						}
+						
+						document.write("<td>"+matches[i+1]+"</td>");
+					document.write("</tr>");	
+				}
+			document.write("</table>");
+		document.write("</div>");
     </script>
 </body>
 </html>
+
