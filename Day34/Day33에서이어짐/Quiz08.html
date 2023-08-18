@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <div>
+        <span>파일첨부</span>
+        <button id="add">+</button><br>
+        <fieldset id="mainCon">
+            <legend>첨부 목록</legend>
+        </fieldset>
+    </div>
+    <script>
+        let count = 0;
+        $("#add").on("click",function(){
+            if(++count > 5){
+                alert("최대 5개 까지 입니다.");
+                return false;
+            }
+            let p = $("<span>");
+            let input = $("<input>");
+            input.attr("type","file");
+            
+            let delbtn = $("<a>");
+            delbtn.html("X");
+            delbtn.addClass("del");
+            delbtn.attr("href","#");
+            // delbtn.css({
+            //     "text-decoration": "underline",
+            //     "color": "blue"
+            // });
+            // delbtn.hover(function(){
+            //     $(this).css("cursor","pointer");
+            // });
+            p.append(input);
+            p.append(delbtn);
+            p.append("<br>");
+            $("#mainCon").append(p);
+
+            $(delbtn).on("click",function(){
+                p.remove();
+                count = count-1;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="home">
+        Home
+        <div id="grand_parent">
+            GrandParent
+            <div id="parent01">
+                Parent01
+                <div id="brother01">
+                    Brother01
+                </div>
+                <div id="me">
+                    Me
+                    <div id="sister01">
+                        Sister01
+                        <div id="baby">
+                            Baby01
+                        </div>
+                    </div>
+                    <div id="sister02">
+                        Sister02
+                    </div>
+                </div>
+                <div id="brother02">
+                    Brother02
+                </div>
+            </div>
+            <div id="parent02">
+                Parent02
+            </div>
+        </div>
+    </div>
+    <script>
+        //부모, 자손 선택
+        console.log($($("#me").children()[0]).children());
+        console.log($("#me").children("#sister01").children());
+        //children은 직계자손만 선택 가능.
+
+        console.log($("#me").find("#baby"));
+        //find는 검색하는 대상이 직계자손이 아니어도 검색이 가능.
+
+        console.log($("#me").siblings());
+        //siblings는 본인과 동급 요소를 전부 찾아옴(css 형제 선택자는 밑으로만 가능했지만 JQuery는 위, 아래 상관없이 형제 요소를 찾아옴.)
+
+        console.log($("#me").parent());
+        console.log($("#me").parent("#grand_parent"));
+        //parrent는 본인이 포함되어있는 직계 부모요소까지만 찾아옴.
+
+        console.log($("#me").parents());
+        console.log($("#me").closest("#grand_parent"));
+        //parents 는 본인이 포함된 직계 부모요소 모두를 찾아옴.
+        //closest는 본인이 포함된 직계 부모요소 중 하나를 검색하여 찾아옴.
+    </script>
+</body>
+</html>
