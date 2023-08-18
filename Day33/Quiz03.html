@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <p id="p1">p1</p>
+    <p id="p2">p2</p>
+    <p id="p3">p3</p>
+    <p id="p4">p4</p>
+    <input type="text" id="sel" placeholder="Select P">
+    <input type="text" id="bg" placeholder="Background Color">
+    <button id="btn">적용</button>
+    <script>
+        $("#btn").on("click",function(){
+            if($("#sel").val() == ""){
+                alert("P 태그를 선택.");
+            }
+            console.log($("#sel").val());
+            if($("#sel").val() == "p1"){
+                if($("#bg").val() == ""){
+                    alert("배경 색을 입력해주세요");
+                }
+                $("#p1").css("background-color",$("#bg").val());
+            }
+            if($("#sel").val() == "p2"){
+                if($("#bg").val() == ""){
+                    alert("배경 색을 입력해주세요");
+                }
+                $("#p2").css("background-color",$("#bg").val());
+            }
+            
+            if($("#sel").val() == "p3"){
+                if($("#bg").val() == ""){
+                    alert("배경 색을 입력해주세요");
+                }
+                $("#p3").css("background-color",$("#bg").val());
+            }
+            
+            if($("#sel").val() == "p4"){
+                if($("#bg").val() == ""){
+                    alert("배경 색을 입력해주세요");
+                }
+                $("#p4").css("background-color",$("#bg").val());
+            }
+        })
+    </script>
+</body>
+</html>

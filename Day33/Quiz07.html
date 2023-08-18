@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        table{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="title" placeholder="제목"><br>
+    <input type="text" id="content" placeholder="내용"><br>
+    <input type="text" id="writer" placeholder="작성자"><br>
+    <button id="submit">작성하기</button>
+    <hr>
+    <table border="1" id="tab">
+        <tr>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>삭제</th>
+        </tr>
+        <tr>
+            <td>Jquery 연습하기</td>
+            <td>연습중</td>
+            <td>kwon</td>
+            <td>btn</td>
+        </tr>
+    </table>
+    
+    <script>
+        
+        
+        $("#submit").on("click",function(){
+            let td = $("<td>");
+            let delBtn = $("<button>");
+            delBtn.attr("class","delBtn");
+            delBtn.html("X");
+            let data = $("<tr>");
+            let title = $("#title").val();
+            let content = $("#content").val();
+            let writer = $("#writer").val();
+
+            if(title==""||content==""||writer==""){
+                alert("모든 정보를 입력하시오.");
+                return 0;
+            }
+            let btnTd = td.html(delBtn);
+            console.log(btnTd);
+            data.attr("class",count);
+            data.html("<td>"+title+"</td><td>"+content+"</td><td>"+writer+"</td>");
+            data.append(btnTd);
+            $("#tab").append(data);
+            $(".delBtn").on("click",function(){
+                tab.remove();
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

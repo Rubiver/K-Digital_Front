@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .container{
+            border: 1px solid black;
+            width: 700px;
+            height: 700px;
+            margin: auto;
+        }
+        #mainCon{
+            width: 100%;
+            height: 90%;
+            overflow:auto;
+        }
+        #btnCon{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #appCon{
+            width: 100%;
+            height: 50px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="mainCon"></div>
+        <div id="btnCon">
+            <button id="prep">위로 추가하기</button>
+            <button id="app">아래로 추가하기</button>
+        </div>
+    </div>
+    <script>
+        let count = 1;
+        $("#prep").on("click",function(){
+            let addCon = $("<div>");
+            addCon.attr("id","appCon");
+            console.log("wkrehd");
+            addCon.html("Content Added :"+count);
+            $("#mainCon").prepend(addCon);
+            count++;
+        });
+
+        $("#app").on("click",function(){
+            let addCon = $("<div>");
+            addCon.attr("id","appCon");
+            addCon.html("Content Added :"+count);
+            $("#mainCon").append(addCon);
+            count++;
+            let scroll = document.getElementById("mainCon");
+            $("#mainCon").scrollTop($("#mainCon")[0].scrollHeight);
+            //scroll.scrollTop = scroll.scrollHeight;
+        })
+    </script>
+</body>
+</html>

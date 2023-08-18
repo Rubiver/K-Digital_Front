@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        기존내용 <br>
+    </div>
+    <!--e동적으로 요소가 추가됨.-->
+    <script>
+        let anker = $("<a>");
+        anker.attr("href","exam03.html");
+        anker.html("exam03");
+        $(".box").append(anker);
+        $(".box").append("<br><a href='asd'>Append 자리</a>"); //태그도 사용할 수 있음.
+        $(".box").prepend("여기가 Prepend 자리<br>");
+        $(".box").before("여기가 before 자리");
+        $(".box").after("여기가 after 자리");
+    </script>
+</body>
+</html>

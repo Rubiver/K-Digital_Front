@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <input type="text" name="" id="num1"><br>
+    <input type="text" name="" id="num2">
+    <button id="plus">+</button><br>
+    <span id="res"></span>
+    <script>
+        $("#plus").on("click",function(){
+            let num1 = $("#num1");
+            let num2 = $("#num2");
+            if(num1.val() == "" || num2.val() == ""){
+                alert("값이 비었음.");
+            }
+            let result = parseInt(num1.val())+parseInt(num2.val());
+            $("#res").html(result);
+            num1.val("");
+            num2.val("");
+        })
+    </script>
+</body>
+</html>

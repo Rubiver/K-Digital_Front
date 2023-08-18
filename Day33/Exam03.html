@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <button class="btn">btn1</button>
+    <button class="btn">btn2</button>
+    <button class="btn">btn3</button>
+    <script>
+        let btns = $(".btn");
+        console.log(btns.html());
+        //JQuery 객체에서 요소하나를 꺼냈을때 JS object으로 꺼내짐.
+        btns.on("click",function(){
+            //alert(this.innerHTML);
+            alert($(this).html());
+        })
+        // for(let i=0; i<btns.length; i++){
+        //     btns[i].onclick = function(){
+        //         alert("test");
+        //     };
+        // }
+        //$("") quotation은 선택자를 사용하겠다는 것임. 또한 $()으로 wrapping하여 Jquery object로 사용할 수 있음.
+    </script>
+</body>
+</html>

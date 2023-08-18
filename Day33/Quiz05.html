@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>패스워드 입력 실습</legend>
+        <input type="password" name="" id="pw1"><br>
+        <input type="password" name="" id="pw2">
+        <div id="res"></div>
+    </fieldset>
+    <script>
+        let pw1 = $("#pw1");
+        let pw2 = $("#pw2");
+        let res = $("#res");
+        pw2.keyup(function(){
+            if(pw1.val()==pw2.val()){
+                res.html("비밀번호 일치");
+                res.css("color","blue");
+            }else{
+                res.html("비밀번호 불일치");
+                res.css("color","red");
+            }
+        });
+    </script>
+</body>
+</html>

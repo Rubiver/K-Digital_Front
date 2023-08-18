@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <input type="text" name="" id="txt" value="hi">
+    <div id="txtDiv">asd</div>
+    <script>
+        //JQuery : JS 언어 베이스 라이브러리
+        // JS를 더 쉽게 사용할 수 있게 하는 라이브러리
+        //JQuery 장점 : 문법적 코딩 분량을 대폭 줄임, 브라우저 호환성 이슈를 해결. JS 문법과 혼용이 가능. Jquery는 CSS의 셀렉터 문법을 사용.
+        //jQuery와 $는 사용할때 같은 기능을 함. $는 jquery를 사용할때만 변경.
+        let js = document.getElementById("txt"); //JS object (Node)를 반환
+        let jq = $("#txt"); //JQuery Node를 반환
+        console.log(jq.val()); //DOM 객체를 Jquery객체로 한번 더 감싼 형태임.
+        jq.val("JQuery로 저장함");
+
+        let txtDiv = $("#txtDiv");
+        console.log(txtDiv.html());
+        txtDiv.html("Jquery로 변경");
+        txtDiv.css("background-color","pink");
+        txtDiv.css("color","forestgreen");
+
+        txtDiv.css({
+            "background-color" : "beige",
+            "color":"dodgerblue"
+        });
+        //css를 한번에 객체형식으로 작성할 수 있음.
+
+    </script>
+</body>
+</html>
