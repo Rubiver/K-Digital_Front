@@ -22,13 +22,22 @@
             position: fixed;
             right: 15px;
         }
-        .contents{
+        .contents_par{
             position: relative;
-            padding: 15px;
             height: 80%;
             width: 100%;
             overflow-y: auto;
             background-color: lightsteelblue;
+            z-index: 1;
+        }
+        .contents{
+            position: relative;
+            padding: 15px;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            background-color: lightsteelblue;
+            z-index: 2;
         }
         .controls{
             height: 20%;
@@ -68,6 +77,7 @@
             border-radius: 3px;
             background-color: white;
             margin-bottom: 20px;
+            z-index: 2;
         }
         .design_me{
             padding: 3px;
@@ -92,6 +102,10 @@
             display: inline-block;
             height: 15.2px;
         }
+
+        .btn{
+            position: relative;
+        }
         @keyframes fadeInDown {
             0% {
                 opacity: 0;
@@ -102,16 +116,47 @@
                 transform: translateZ(0);
             }
         }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 1;
+                transform: translateZ(0);
+                
+            }
+            to {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+        }
         .iconDiv{
             position:absolute;
             top: 0px;
             left: 0px;
             width: 100%;
-            height: 100%;
+            height: 0%;
             background-color: #00000050;
-            animation: fadeInDown 1s;
+            transition-duration: 1s;
+            z-index: 4;
+            overflow: hidden;
         }
-        
+        .iconDiv img{
+            width: 100px;
+            height: 100px;
+        }
+        .iconDiv img:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        /* animation: fadeInDown 1s; */
+        #icon2{
+            top: 0px;
+            left: 0px;
+            position: absolute;
+            display: none;
+        }
+        .forCenter{
+            margin: 5px;
+        }
         
     </style>
 </head>
@@ -119,12 +164,21 @@
     
     <div class="container">
         
-        <div class="contents">
-            <!-- <div class="iconDiv" style="visibility: hidden;">
-
-            </div> -->
+        <div class="contents_par">
+            <div class="iconDiv">
+                <div class="forCenter">
+                    <img src="img/blur.png" alt="">
+                    <img src="img/cowboy.png" alt="">
+                    <img src="img/surprise.png" alt="">
+                    <img src="img/hehe.png" alt="" >
+                    <img src="img/tongue.png" alt="">
+                    <img src="img/cool.png" alt="">
+                </div>
+            </div>
+            <div class="contents">
+                
+            </div>
         </div>
-        
         <div class="controls">
             <div class="chat">
                 <div id="txt" contenteditable="true">
@@ -132,7 +186,8 @@
                 </div>
             </div>
             <div class="btn">
-                <button id="icon">Icon</button>
+                <button id="icon1">Icon</button>
+                <button id="icon2">Close</button>
             </div>
         </div>
     </div>
@@ -150,33 +205,7 @@
             let str = hours+":"+minutes+":"+seconds;
             return str;
         }
-        // $("#sendMsg").on("click",function(){
-        //     console.log(getTimeNow());
-        //         let msg = $("#txt");
-            
-        //         let div = $("<div>");
-                
-        //         let msgDiv = $("<div>");
-        //         if(index==0){
-        //             msgDiv.addClass("design");
-        //             div.attr("class","box");
-        //             index=1;
-        //         }else{
-        //             msgDiv.addClass("design_me");
-        //             div.attr("class","box_flex");
-        //             index=0;
-        //         }
-        //         msgDiv.html(msg.val());
-        //         let timeDiv = $("<div>");
-        //         timeDiv.attr("class","time");
-        //         timeDiv.html(getTimeNow());
-        //         div.html(msgDiv);
-        //         div.append(timeDiv);
-        //         $(".contents").append(div);
-        //         msg.val("");
-        //         keepScrollBottom();
-        // });
-
+        
         $("#txt").keydown(function(e){
             console.log(e.key);
             if(e.key == "Enter" && e.shiftKey == false){
@@ -201,19 +230,63 @@
                 return false;
             }
         });
-        let state = 0;
-        $("#icon").on("click",function(){
-            let coverDiv = $("<div>");
-            coverDiv.addClass("iconDiv");
-            if(state==0){
-                $(".contents").append(coverDiv);
-                state=1;
-            }else if(state == 1){
-                $(".contents").children(".iconDiv").remove();
-                state=0;
-            }
-            
+        $("#icon1").on("click",function(){
+            // let coverDiv = $("<div>");
+            // coverDiv.addClass("iconDiv");
+            //$(".contents").append(coverDiv);
+            $(".iconDiv").css("height","100%");
+            $("#icon2").css("display","block");
+            $("#icon1").css("display","none");
+            $(".iconDiv").css("animation","fadeInDown 1s");
         });
+
+        $("#icon2").on("click",function(){
+            $(".iconDiv").css("height","0%");
+            $("#icon1").css("display","block");
+            $("#icon2").css("display","none");
+        });
+
+        $(".iconDiv img").on("click",function(){
+            let rep = $(this).clone();
+            console.log($(rep));
+            $(rep).css({
+                "width":"100px",
+                "height":"100px",
+                "vertical-align":"middle"
+            });
+            $("#txt").append(rep);
+            $("#icon1").css("display","block");
+            $("#icon2").css("display","none");
+            $(".iconDiv").css("height","0%");
+        })
     </script>
 </body>
 </html>
+
+
+<!-- // $("#sendMsg").on("click",function(){
+    //     console.log(getTimeNow());
+    //         let msg = $("#txt");
+        
+    //         let div = $("<div>");
+            
+    //         let msgDiv = $("<div>");
+    //         if(index==0){
+    //             msgDiv.addClass("design");
+    //             div.attr("class","box");
+    //             index=1;
+    //         }else{
+    //             msgDiv.addClass("design_me");
+    //             div.attr("class","box_flex");
+    //             index=0;
+    //         }
+    //         msgDiv.html(msg.val());
+    //         let timeDiv = $("<div>");
+    //         timeDiv.attr("class","time");
+    //         timeDiv.html(getTimeNow());
+    //         div.html(msgDiv);
+    //         div.append(timeDiv);
+    //         $(".contents").append(div);
+    //         msg.val("");
+    //         keepScrollBottom();
+    // }); -->
