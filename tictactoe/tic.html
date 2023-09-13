@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .con{
+            width: 152px;
+            height: 152px;
+            margin: auto;
+            position: relative;
+        }
+        .con div{
+            float: left;
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+        }
+        .cell{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cell:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="click">
+
+        </div>
+        <div class="click">
+            
+        </div>
+        <div class="click">
+            
+        </div>
+        <div class="click">
+            
+        </div>
+        <div class="click">
+            
+        </div>
+        <div class="click">
+            
+        </div>
+        <div class="click">
+            
+        </div>
+        <div class="click">
+            
+        </div>
+        <div class="click">
+            
+        </div>
+    </div>
+    <div id="turn">black turn</div>
+    <button id="reset">Reset</button>
+    <div id="c">
+
+    </div>
+    <script>
+        let con = $("<div>");
+        con.addClass("con");
+        
+        init();
+
+        function init(){
+            for(let i=0; i<3; i++){
+                for(let j=0; j<3; j++){
+                    let div = $("<div>");
+                    div.addClass("cell");
+                    div.css("left",(50*j));
+                    div.css("top",(50*i));
+                    div.attr("cidx",j);
+                    div.attr("ridx",i);
+
+                    $(div).on("click",function(){
+                        if($(this).text()){
+                            return;
+                        }
+                        $(this).text("O");
+                        $(this).effect("bounce","slow");
+                        let result = checkEnd("O");
+                        if(result){
+                            setTimeout(function(){
+                                alert("player win");
+                                $("#c").effect("drop",{},500,function(){
+                                    $(con).empty();
+                                });
+                                init();
+                                return;
+                            },0);
+                        }else{
+                            let empty_cell = [];
+                        for(let ii=0; ii<$(".cell").length; ii++){
+                            if($($(".cell")[ii]).text()==""){
+                                empty_cell.push($(".cell")[ii]);
+                            }
+                        }
+                        if(empty_cell.length == 0){
+                            alert("draw");
+                            return;
+                        }
+                        let rand_num = empty_cell[Math.floor(Math.random()*empty_cell.length)];
+                        $(rand_num).text("X");
+                        let result2 = checkEnd("X");
+                        if(result2){
+                            setTimeout(function(){
+                                alert("comr win");
+                                $(con).empty();
+                                init();
+                                return;
+                            },0);
+                        }
+                        }
+                        
+                    });
+                con.append(div);
+                }
+            }
+        }
+        function checkEnd(ch){
+            for(let i=0; i< 3; i++){
+                if($(".cell[ridx="+i+"][cidx=0]").text() == ch &&
+                        $(".cell[ridx="+i+"][cidx=1]").text() == ch &&
+                        $(".cell[ridx="+i+"][cidx=2]").text() == ch ){
+                            console.log("가로승");
+                            return true;
+                    }
+            }
+            for(let i=0; i< 3; i++){
+                if($(".cell[ridx=0][cidx="+i+"]").text() == ch &&
+                    $(".cell[ridx=1][cidx="+i+"]").text() == ch &&
+                    $(".cell[ridx=2][cidx="+i+"]").text() == ch ){
+                        console.log("세로승");
+                            return true;
+                    }
+            }
+            if($(".cell[ridx=0][cidx=0]").text() == ch &&
+                    $(".cell[ridx=1][cidx=1]").text() == ch &&
+                    $(".cell[ridx=2][cidx=2]").text() == ch ){
+                        console.log("좌대각승");
+                            return true;
+            }
+            if($(".cell[ridx=2][cidx=0]").text() == ch &&
+                    $(".cell[ridx=1][cidx=1]").text() == ch &&
+                    $(".cell[ridx=0][cidx=2]").text() == ch ){
+                        console.log("우대각승");
+                            return true;
+            }
+            
+            return false;
+        }
+        
+        $("#c").append(con);
+        let state = 0;
+        $(".click").on("click",function(){
+            if(state == 0){
+                $(this).css("background-color","black");
+                $("#turn").text("green turn");
+                state = 1;
+            }else if(state == 1){
+                $(this).css("background-color","green");
+                $("#turn").text("black turn");    
+                state = 0;
+            }
+        });
+        $("#reset").on("click",function(){
+            $(".click").css("background-color","white");
+        });
+    </script>
+</body>
+</html>

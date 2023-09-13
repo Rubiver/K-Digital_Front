@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.60.0/phaser.min.js"></script> -->
+    <script src="Scene01.js"></script>
+    <script src="Scene02.js"></script>
+    <script src="GameoverScene.js"></script>
+    <style>
+        #container{
+            width: 900px;
+            height: 300px;
+            /* width: 300px;
+            height: 300px; */
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        let option = {
+            type:Phaser.AUTO,
+            parent : "container",
+            width : "100%",
+            height : "100%",
+            physics : {
+                default : "arcade",
+                arcade : {
+                    gravity : {y:0},
+                    debug : false
+                }
+            },
+            audio : {
+                disableWebAudio: true
+            },
+            backgroundColor: '#000000',
+            scene:[Scene01,GameoverScene]
+            // scene:[Scene02]
+        };
+        let game = new Phaser.Game(option);
+    </script>
+</body>
+</html>

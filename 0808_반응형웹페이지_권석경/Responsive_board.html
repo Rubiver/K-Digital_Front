@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        div{
+            border: 0px solid black;
+        }
+        .header{
+            border: 1px solid black;
+        }
+        .write_contents{
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row header text-center d-flex justify-content-center align-items-center g-0">
+            <div class="col-2 col-md-1"> 번호</div>
+            <div class="col-10 col-md-6">제목</div>
+            <div class="col-2 d-none d-md-flex">작성자</div>
+            <div class="col-1 d-none d-md-flex">조회</div>
+            <div class="col-2 d-none d-md-flex">날짜</div>
+        </div>
+        <div class="row contents g-0">
+            <div class="col-12 write_contents text-center">
+                <div class="alert alert-dark btn btn-dark w-100" role="alert" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                    <div class="row fs-5">
+                        <div class="col-2 col-md-1">2</div>
+                        <div class="col-10 col-md-6">bootstrap</div>
+                        <div class="col-2 d-none d-md-flex">kwon</div>
+                        <div class="col-1 d-none d-md-flex">1</div>
+                        <div class="col-2 d-none d-md-flex">23/08/07</div>
+                    </div>
+                    <div class="row d-md-none d-flex fs-6">
+                        <div class="col-3"><i class="fa-regular fa-user"></i> kwon</div>
+                        <div class="col-2"><i class="fa-solid fa-magnifying-glass"></i> 1</div>
+                        <div class="col-3"><i class="fa-regular fa-calendar"></i> 23/08/07</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="collapse" id="collapseExample1">
+                        <div class="card card-body">
+                          2번 게시글
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-12 write_contents text-center">
+                <div class="alert alert-dark btn btn-dark w-100" role="alert" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                    <div class="row fs-5">
+                        <div class="col-2 col-md-1">1</div>
+                        <div class="col-10 col-md-6">반응형 게시판 예제</div>
+                        <div class="col-2 d-none d-md-flex">kim</div>
+                        <div class="col-1 d-none d-md-flex">199</div>
+                        <div class="col-2 d-none d-md-flex">23/02/13</div>
+                    </div>
+                    <div class="row d-md-none d-flex fs-6">
+                        <div class="col-3"><i class="fa-regular fa-user"></i> kim</div>
+                        <div class="col-2"><i class="fa-solid fa-magnifying-glass"></i> 199</div>
+                        <div class="col-3"><i class="fa-regular fa-calendar"></i> 23/02/13</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="collapse" id="collapseExample2">
+                        <div class="card card-body">
+                          1번 게시글
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link text-black" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link text-black" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link text-black" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
